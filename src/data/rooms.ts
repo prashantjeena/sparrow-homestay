@@ -1,4 +1,5 @@
 import type { AmenityKey } from "./amenities";
+import { asset } from "@/lib/asset";
 
 export type Room = {
   slug: string;
@@ -34,7 +35,7 @@ export const rooms: Room[] = [
     pricePerNight: 3200,
     amenities: ["attached-bath", "view", "balcony", "wifi", "hot-water", "heater"],
     highlights: ["Private balcony", "Best sunrise view", "Room for a small family"],
-    images: ["/images/place-1.svg", "/images/place-2.svg"],
+    images: ["/images/place-1.svg", "/images/place-2.svg"].map(asset),
   },
   {
     slug: "pine-room",
@@ -49,7 +50,7 @@ export const rooms: Room[] = [
     pricePerNight: 2400,
     amenities: ["attached-bath", "view", "wifi", "hot-water", "heater"],
     highlights: ["Forest-facing window", "Reading nook", "Quietest room"],
-    images: ["/images/place-3.svg", "/images/place-4.svg"],
+    images: ["/images/place-3.svg", "/images/place-4.svg"].map(asset),
   },
   {
     slug: "garden-room",
@@ -64,7 +65,7 @@ export const rooms: Room[] = [
     pricePerNight: 2800,
     amenities: ["attached-bath", "garden", "wifi", "hot-water", "heater", "parking"],
     highlights: ["No stairs", "Opens onto the lawn", "Easy for kids and elders"],
-    images: ["/images/place-6.svg", "/images/place-7.svg"],
+    images: ["/images/place-6.svg", "/images/place-7.svg"].map(asset),
   },
 ];
 
@@ -78,7 +79,7 @@ export const house = {
   bedrooms: 3,
   pricePerNight: 7200,
   amenities: ["attached-bath", "kitchen", "view", "wifi", "hot-water", "heater"] as AmenityKey[],
-  images: ["/images/place-1.svg", "/images/place-3.svg", "/images/place-6.svg"],
+  images: ["/images/place-1.svg", "/images/place-3.svg", "/images/place-6.svg"].map(asset),
   includes: [
     "3 attached bathrooms",
     "Home kitchen",
