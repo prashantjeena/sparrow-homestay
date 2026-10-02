@@ -28,6 +28,7 @@ jobs:
         env:
           # Repo-name sub-path. DELETE this line once you use a custom domain.
           NEXT_PUBLIC_BASE_PATH: /sparrow-homestay
+          NEXT_PUBLIC_SITE_URL: https://prashantjeena.github.io
           NEXT_PUBLIC_GCAL_API_KEY: ${{ secrets.NEXT_PUBLIC_GCAL_API_KEY }}
       - uses: actions/upload-pages-artifact@v3
         with:

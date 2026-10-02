@@ -13,9 +13,9 @@ import {
   User,
   X,
 } from "lucide-react";
-import { site } from "@/data/site";
 import { generalEnquiry, whatsappLink } from "@/lib/whatsapp";
 import MoodToggle from "./MoodToggle";
+import Logo from "./Logo";
 
 const links = [
   { href: "#rooms", label: "Rooms", icon: BedDouble },
@@ -58,14 +58,7 @@ export default function Navbar() {
       }`}
     >
       <div className="container-x flex items-center justify-between gap-4">
-        <a
-          href="#top"
-          className="font-display whitespace-nowrap text-xl font-semibold text-ink"
-        >
-          {/* Short name on small phones so the bar never wraps */}
-          <span className="sm:hidden">{site.short}</span>
-          <span className="hidden sm:inline">{site.name}</span>
-        </a>
+        <Logo />
 
         {/* Desktop links: icon right next to the word */}
         <nav className="hidden items-center gap-6 text-sm text-ink2 xl:flex">
