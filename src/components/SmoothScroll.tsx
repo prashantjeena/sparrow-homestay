@@ -1,0 +1,25 @@
+"use client";
+
+import { useEffect } from "react";
+import Lenis from "lenis";
+
+/** Buttery smooth scrolling. Skipped for people who prefer reduced motion. */
+export default function SmoothScroll() {
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    // The offset keeps the fixed nav bar from covering the top of a section.
+    const lenis = new Lenis({ lerp: 0.1, anchors: { offset: -64 } });
+    let frame = requestAnimationFrame(function raf(time) {
+      lenis.raf(time);
+      frame = requestAnimationFrame(raf);
+    });
+
+    return () => {
+      cancelAnimationFrame(frame);
+      lenis.destroy();
+    };
+  }, []);
+
+  return null;
+}
