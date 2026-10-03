@@ -7,6 +7,8 @@ import SmoothScroll from "@/components/SmoothScroll";
 import Faq from "@/components/Faq";
 import { site } from "@/data/site";
 import Gallery from "@/components/Gallery";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -36,6 +38,8 @@ export default function Home() {
         <Gallery />
         <Host />
         <Booking />
+        <Contact/>
+        <Footer/>
         <Faq />
       </main>
     </>

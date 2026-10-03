@@ -1,8 +1,20 @@
-import { useId } from "react";
+import { useId, type CSSProperties } from "react";
 import { BIRD, LOCK, TAG_PATH, WORD_PATH } from "./logo-paths";
 
 /** The sparrow, drawn in a 100 x 80 box with its feet at y = 68. */
-function Bird({ x, y, w }: { x: number; y: number; w: number }) {
+function Bird({
+  x,
+  y,
+  w,
+  wing = "var(--lantern)",
+  eye = "var(--paper)",
+}: {
+  x: number;
+  y: number;
+  w: number;
+  wing?: string;
+  eye?: string;
+}) {
   return (
     <g transform={`translate(${x} ${y}) scale(${w / 100})`}>
       <g fill="currentColor">
@@ -12,8 +24,8 @@ function Bird({ x, y, w }: { x: number; y: number; w: number }) {
         <path d="m84 25 12 4.5L84 34z" />
         <path d="M46 56h2.4v12H46zM55 55h2.4v13H55z" />
       </g>
-      <path d="M34 42Q50 30 68 43Q52 55 34 42Z" fill="var(--lantern)" />
-      <circle cx="77" cy="26" r="2.4" fill="var(--paper)" />
+      <path d="M34 42Q50 30 68 43Q52 55 34 42Z" fill={wing} />
+      <circle cx="77" cy="26" r="2.4" fill={eye} />
     </g>
   );
 }
@@ -21,17 +33,30 @@ function Bird({ x, y, w }: { x: number; y: number; w: number }) {
 /** "Sparrow" with the bird perched on the w. Follows the sunrise / dusk theme. */
 export function Wordmark({
   compact = false,
+  tone = "auto",
   className = "",
 }: {
   /** Drops the small HOMESTAY line, for tight spaces like the navbar. */
   compact?: boolean;
+  /** "light" is the cream version for dark backgrounds that stay dark in both themes (the footer). */
+  tone?: "auto" | "light";
   className?: string;
 }) {
   const h = compact ? LOCK.compactH : LOCK.h;
+  const light = tone === "light";
+  const lightStyle: CSSProperties | undefined = light
+    ? ({
+        color: "#f6f0e1",
+        "--paper": "#1f3a2e",
+        "--moss": "#a3b18a",
+        "--lantern": "#e9b44c",
+      } as CSSProperties)
+    : undefined;
   return (
     <svg
       viewBox={`0 0 ${LOCK.w} ${h}`}
-      className={`text-ink ${className}`}
+      className={`${light ? "" : "text-ink"} ${className}`}
+      style={lightStyle}
       role="img"
       aria-label="Sparrow Homestay"
     >
