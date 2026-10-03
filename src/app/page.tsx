@@ -6,6 +6,7 @@ import Rooms from "@/components/Rooms";
 import SmoothScroll from "@/components/SmoothScroll";
 import Faq from "@/components/Faq";
 import { site } from "@/data/site";
+import Gallery from "@/components/Gallery";
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
         </section>
 
         <Rooms />
+        <Gallery />
         <Host />
         <Booking />
         <Faq />

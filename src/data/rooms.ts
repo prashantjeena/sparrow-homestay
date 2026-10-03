@@ -33,9 +33,23 @@ export const rooms: Room[] = [
     size: "300 sq ft",
     bath: "Attached bathroom with 24x7 hot water",
     pricePerNight: 3200,
-    amenities: ["attached-bath", "view", "balcony", "wifi", "hot-water", "heater"],
-    highlights: ["Private balcony", "Best sunrise view", "Room for a small family"],
-    images: ["/images/place-1.svg", "/images/place-2.svg"].map(asset),
+    amenities: [
+      "attached-bath",
+      "view",
+      "balcony",
+      "wifi",
+      "hot-water",
+      "heater",
+    ],
+    highlights: [
+      "Private balcony",
+      "Best sunrise view",
+      "Room for a small family",
+    ],
+    images: [
+      "/images/rooms/deodar-room-1.svg",
+      "/images/rooms/deodar-room-2.svg",
+    ].map(asset),
   },
   {
     slug: "pine-room",
@@ -50,7 +64,10 @@ export const rooms: Room[] = [
     pricePerNight: 2400,
     amenities: ["attached-bath", "view", "wifi", "hot-water", "heater"],
     highlights: ["Forest-facing window", "Reading nook", "Quietest room"],
-    images: ["/images/place-3.svg", "/images/place-4.svg"].map(asset),
+    images: [
+      "/images/rooms/pine-room-1.svg",
+      "/images/rooms/pine-room-2.svg",
+    ].map(asset),
   },
   {
     slug: "garden-room",
@@ -63,9 +80,23 @@ export const rooms: Room[] = [
     size: "260 sq ft",
     bath: "Attached bathroom with 24x7 hot water",
     pricePerNight: 2800,
-    amenities: ["attached-bath", "garden", "wifi", "hot-water", "heater", "parking"],
-    highlights: ["No stairs", "Opens onto the lawn", "Easy for kids and elders"],
-    images: ["/images/place-6.svg", "/images/place-7.svg"].map(asset),
+    amenities: [
+      "attached-bath",
+      "garden",
+      "wifi",
+      "hot-water",
+      "heater",
+      "parking",
+    ],
+    highlights: [
+      "No stairs",
+      "Opens onto the lawn",
+      "Easy for kids and elders",
+    ],
+    images: [
+      "/images/rooms/garden-room-1.svg",
+      "/images/rooms/garden-room-2.svg",
+    ].map(asset),
   },
 ];
 
@@ -78,9 +109,20 @@ export const house = {
   capacity: 8,
   bedrooms: 3,
   pricePerNight: 7200,
-  amenities: ["attached-bath", "kitchen", "view", "wifi", "hot-water", "heater"] as AmenityKey[],
-  images: ["/images/place-1.svg", "/images/place-3.svg", "/images/place-6.svg"].map(asset),
-  includes: [
+  amenities: [
+    "attached-bath",
+    "kitchen",
+    "view",
+    "wifi",
+    "hot-water",
+    "heater",
+  ] as AmenityKey[],
+  images: [
+    "/images/house/whole-house-1.svg",
+    "/images/house/whole-house-2.svg",
+    "/images/house/whole-house-3.svg",
+  ].map(asset),
+    includes: [
     "3 attached bathrooms",
     "Home kitchen",
     "Living room",
